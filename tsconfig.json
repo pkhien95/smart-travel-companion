@@ -1,3 +1,30 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@hooks": ["./app/hooks"],
+      "@hooks/*": ["./app/hooks/*"],
+      "@components/*": ["./app/components/*"],
+      "@components": ["./app/components"],
+      "@features": ["./app/features"],
+      "@features/*": ["./app/features/*"],
+      "@utils": ["./app/utils"],
+      "@utils/*": ["./app/utils/*"],
+      "@navigation": ["./app/navigation"],
+      "@navigation/*": ["./app/navigation/*"],
+      "@services": ["./app/services"],
+      "@services/*": ["./app/services/*"],
+      "@constants": ["./app/constants"],
+      "@constants/*": ["./app/constants/*"],
+      "@assets": ["./app/assets"],
+      "@assets/*": ["./app/assets/*"],
+      "@localization/*": ["./app/localization/*"],
+      "@localization": ["./app/localization"],
+      "@configs": ["./app/configs"],
+      "@rootTypes": ["./app/rootTypes"],
+      "@rootTypes/*": ["./app/rootTypes/*"],
+    }
+  }
 }
