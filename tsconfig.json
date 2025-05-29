@@ -25,6 +25,8 @@
       "@configs": ["./app/configs"],
       "@rootTypes": ["./app/rootTypes"],
       "@rootTypes/*": ["./app/rootTypes/*"],
+      "@theme": ["./app/theme"],
+      "@theme/*": ["./app/theme/*"],
     }
   }
 }

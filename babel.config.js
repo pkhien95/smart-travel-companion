@@ -18,6 +18,7 @@ module.exports = {
           '@localization': './app/localization',
           '@configs': './app/configs',
           '@rootTypes': './app/rootTypes',
+          '@theme': './app/theme',
         },
       },
     ],
