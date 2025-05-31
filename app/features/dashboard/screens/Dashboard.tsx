@@ -3,9 +3,12 @@ import { MainStackParams } from '@navigation/main-stack/types.ts'
 import { CompositeScreenProps } from '@react-navigation/native'
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs'
 import { HomeBottomTabsParams } from '@navigation/home-bottom-tabs/types.ts'
-import { View, Text, Button, Card } from '@components/base'
+import { Text } from '@components/base'
 import { ScreenBox } from '@components'
 import { ScrollView, StyleSheet } from 'react-native'
+import WeatherInfo from '../components/WeatherInfo.tsx'
+import SuggestedPlaces from '../components/SuggestedPlaces/SuggestedPlaces.tsx'
+import SavedPlaces from '../components/SavedPlaces/SavedPlaces.tsx'
 
 function Dashboard(
   props: CompositeScreenProps<
@@ -14,23 +17,31 @@ function Dashboard(
   >,
 ) {
   return (
-    <ScreenBox edges={['top', 'bottom']}>
-      <Text marginTop={'m'} variant={'header'}>
+    <ScreenBox edges={['top', 'bottom']} style={styles.container}>
+      <Text variant={'header'} mx={'20'} mt={'m'} mb={'s'}>
         Dashboard
       </Text>
 
-      <ScrollView style={styles.scrollView}>
-        <Card borderRadius={'l'}>
-          <Text>dawdwa</Text>
-        </Card>
+      <ScrollView
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollViewContainer}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}>
+        <WeatherInfo px={'20'} pt={'m'} />
+        <SuggestedPlaces mt={'xl'} />
+        <SavedPlaces mt={'l'} />
       </ScrollView>
     </ScreenBox>
   )
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    marginTop: 20,
+  container: {
+    paddingHorizontal: 0,
+  },
+  scrollView: {},
+  scrollViewContainer: {
+    paddingBottom: 40,
   },
 })
 

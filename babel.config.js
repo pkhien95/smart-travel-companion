@@ -19,6 +19,7 @@ module.exports = {
           '@configs': './app/configs',
           '@rootTypes': './app/rootTypes',
           '@theme': './app/theme',
+          '@mocks': './app/mocks',
         },
       },
     ],

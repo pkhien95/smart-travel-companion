@@ -22,8 +22,9 @@ const lightTheme = createTheme({
     secondary: palette.orange,
     muted: palette.gray,
     border: palette.gray,
-    cardBackground: palette.grayLight,
+    cardBackground: palette.white,
     danger: palette.red,
+    textSubdued: palette.grayDark,
   },
   spacing: {
     0: 0,
@@ -33,18 +34,22 @@ const lightTheme = createTheme({
     l: 24,
     xl: 32,
     '2xl': 40,
+    '20': 20,
+    '12': 12,
   },
   borderRadii: {
     s: 4,
     m: 8,
     l: 16,
     xl: 24,
+    circle: 9999,
   },
   buttonVariants: {
     defaults: {
-      paddingVertical: 'm',
-      paddingHorizontal: 'l',
+      paddingVertical: '12',
+      paddingHorizontal: 'm',
       borderRadius: 'm',
+      flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -82,8 +87,8 @@ const lightTheme = createTheme({
       color: 'muted',
     },
     button: {
-      fontFamily: 'Inter-Bold',
-      fontSize: 16,
+      fontFamily: 'Inter-SemiBold',
+      fontSize: 18,
       color: 'foreground',
     },
     small: {
@@ -95,6 +100,11 @@ const lightTheme = createTheme({
       fontFamily: 'Inter-Medium',
       fontSize: 16,
       color: 'foreground',
+    },
+    note: {
+      fontFamily: 'Inter-Italic',
+      fontSize: 16,
+      fontStyle: 'italic',
     },
   },
   breakpoints: {

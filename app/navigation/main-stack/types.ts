@@ -1,4 +1,10 @@
 export type MainStackParams = {
   Home: undefined
-  PlaceDetails: undefined
+  PlaceDetails: {
+    id: string
+  }
+  AddNote: undefined
+  EditNote: {
+    note: string
+  }
 }

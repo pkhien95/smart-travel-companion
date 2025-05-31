@@ -3,11 +3,53 @@ import Dashboard from '@features/dashboard/screens/Dashboard.tsx'
 import { HomeBottomTabsParams } from './types.ts'
 import TripPlanner from '@features/trip-planner/screens/TripPlanner.tsx'
 import Settings from '@features/settings/screens/Settings.tsx'
-import Icon from '@react-native-vector-icons/fontawesome6'
+import FAIcon from '@react-native-vector-icons/fontawesome6'
+import IIcon from '@react-native-vector-icons/ionicons'
 import { useTheme } from '@shopify/restyle'
 import { Theme } from '@theme/light.ts'
+import { RouteProp } from '@react-navigation/native'
 
 const Tab = createBottomTabNavigator<HomeBottomTabsParams>()
+
+function TabBarIcon({
+  route,
+  color,
+  size,
+}: {
+  route: RouteProp<HomeBottomTabsParams, keyof HomeBottomTabsParams>
+  focused: boolean
+  color: string
+  size: number
+}) {
+  switch (route.name) {
+    case 'Dashboard':
+      return (
+        <FAIcon name={'house'} size={size} color={color} iconStyle={'solid'} />
+      )
+
+    case 'TripPlanner':
+      return (
+        <FAIcon
+          name={'calendar-day'}
+          size={size}
+          color={color}
+          iconStyle={'solid'}
+        />
+      )
+
+    case 'Settings':
+      return <IIcon name={'settings'} size={size} color={color} />
+  }
+}
+
+// This function is defined outside of the component to avoid the ESLint error
+const getTabBarIcon = (
+  route: RouteProp<HomeBottomTabsParams, keyof HomeBottomTabsParams>,
+) => {
+  return (props: { focused: boolean; color: string; size: number }) => {
+    return <TabBarIcon route={route} {...props} />
+  }
+}
 
 function HomeBottomTabs() {
   const { colors } = useTheme<Theme>()
@@ -15,32 +57,7 @@ function HomeBottomTabs() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          switch (route.name) {
-            case 'Dashboard':
-              return (
-                <Icon
-                  name={'house'}
-                  size={size}
-                  color={color}
-                  iconStyle={'solid'}
-                />
-              )
-
-            case 'TripPlanner':
-              return (
-                <Icon
-                  name={'calendar-day'}
-                  size={size}
-                  color={color}
-                  iconStyle={'solid'}
-                />
-              )
-
-            case 'Settings':
-              return <Icon name={'eye'} size={size} color={color} />
-          }
-        },
+        tabBarIcon: getTabBarIcon(route),
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.muted,
         tabBarLabelStyle: {
@@ -49,7 +66,11 @@ function HomeBottomTabs() {
         headerShown: false,
       })}>
       <Tab.Screen name={'Dashboard'} component={Dashboard} />
-      <Tab.Screen name={'TripPlanner'} component={TripPlanner} />
+      <Tab.Screen
+        name={'TripPlanner'}
+        component={TripPlanner}
+        options={{ title: 'Trip Planner' }}
+      />
       <Tab.Screen name={'Settings'} component={Settings} />
     </Tab.Navigator>
   )

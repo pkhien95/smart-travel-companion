@@ -7,35 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C80B921A6F3F58F76C31292 /* libPods-SmartTravelCompanion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-SmartTravelCompanion.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2B71379386DA46139287FBF4 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B526DD9E164D91A1C0B017 /* BootSplash.storyboard */; };
 		2DEF65F1A8B1419D815A46D7 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B08651C3B49D28CF14119 /* Inter-Bold.ttf */; };
+		3865AAB8C85F45D4A97009AF /* Inter-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D90D7EC23AA43BC87D97700 /* Inter-Italic.ttf */; };
 		69A76D4964B54C71AF3316D0 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A2879EFA6474523A59DCE7F /* Inter-Medium.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8D44AD25C5D4460A99278E72 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2C5DEE05B7A24620B1D17E0C /* Config.xcconfig */; };
 		C0678E4925514AB0971D695A /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFEFA0BE7ECD40C9AB4D9BEC /* Inter-SemiBold.ttf */; };
+		C0FE3E9DB7BE457F95197FA8 /* libPods-SmartTravelCompanion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AFD63D9F38587ACF932F8F6 /* libPods-SmartTravelCompanion.a */; };
+		D67FA173A40E414D8AE83A26 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA8E4684F3D47EFA5BB4ADB /* Colors.xcassets */; };
 		D8890484DEDB66A9160E4B25 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		F25F970CF70848358C865FBF /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E050FECCC55C48D789E5B61D /* Inter-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		058E8D792DE7686000DCE80B /* SmartTravelCompanion_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartTravelCompanion_Bridging_Header.h; sourceTree = "<group>"; };
-		0B3B08651C3B49D28CF14119 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../app/assets/fonts/Inter/Inter-Bold.ttf"; sourceTree = "<group>"; };
+		0B3B08651C3B49D28CF14119 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../app/assets/fonts/Inter/Inter-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SmartTravelCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartTravelCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SmartTravelCompanion/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmartTravelCompanion/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SmartTravelCompanion/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2AFD63D9F38587ACF932F8F6 /* libPods-SmartTravelCompanion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartTravelCompanion.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5DEE05B7A24620B1D17E0C /* Config.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-SmartTravelCompanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTravelCompanion.debug.xcconfig"; path = "Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-SmartTravelCompanion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTravelCompanion.release.xcconfig"; path = "Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion.release.xcconfig"; sourceTree = "<group>"; };
-		5A2879EFA6474523A59DCE7F /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../app/assets/fonts/Inter/Inter-Medium.ttf"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-SmartTravelCompanion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartTravelCompanion.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B526DD9E164D91A1C0B017 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = SmartTravelCompanion/BootSplash.storyboard; sourceTree = "<group>"; };
+		5A2879EFA6474523A59DCE7F /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../app/assets/fonts/Inter/Inter-Medium.ttf"; sourceTree = "<group>"; };
+		5D90D7EC23AA43BC87D97700 /* Inter-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Italic.ttf"; path = "../app/assets/fonts/Inter/Inter-Italic.ttf"; sourceTree = "<group>"; };
+		64964E9CCDE0CE25A36E38C3 /* Pods-SmartTravelCompanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTravelCompanion.debug.xcconfig"; path = "Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion.debug.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmartTravelCompanion/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SmartTravelCompanion/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E050FECCC55C48D789E5B61D /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../app/assets/fonts/Inter/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		83D759EDF50BA52C8F6D33F2 /* Pods-SmartTravelCompanion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTravelCompanion.release.xcconfig"; path = "Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion.release.xcconfig"; sourceTree = "<group>"; };
+		E050FECCC55C48D789E5B61D /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../app/assets/fonts/Inter/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		EBA8E4684F3D47EFA5BB4ADB /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = SmartTravelCompanion/Colors.xcassets; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FFEFA0BE7ECD40C9AB4D9BEC /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-SemiBold.ttf"; path = "../app/assets/fonts/Inter/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		FFEFA0BE7ECD40C9AB4D9BEC /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-SemiBold.ttf"; path = "../app/assets/fonts/Inter/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-SmartTravelCompanion.a in Frameworks */,
+				C0FE3E9DB7BE457F95197FA8 /* libPods-SmartTravelCompanion.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,8 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				058E8D792DE7686000DCE80B /* SmartTravelCompanion_Bridging_Header.h */,
+				45B526DD9E164D91A1C0B017 /* BootSplash.storyboard */,
+				EBA8E4684F3D47EFA5BB4ADB /* Colors.xcassets */,
 			);
 			name = SmartTravelCompanion;
 			sourceTree = "<group>";
@@ -70,16 +78,16 @@
 				5A2879EFA6474523A59DCE7F /* Inter-Medium.ttf */,
 				E050FECCC55C48D789E5B61D /* Inter-Regular.ttf */,
 				FFEFA0BE7ECD40C9AB4D9BEC /* Inter-SemiBold.ttf */,
+				5D90D7EC23AA43BC87D97700 /* Inter-Italic.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-SmartTravelCompanion.a */,
+				2AFD63D9F38587ACF932F8F6 /* libPods-SmartTravelCompanion.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,8 +126,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-SmartTravelCompanion.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-SmartTravelCompanion.release.xcconfig */,
+				64964E9CCDE0CE25A36E38C3 /* Pods-SmartTravelCompanion.debug.xcconfig */,
+				83D759EDF50BA52C8F6D33F2 /* Pods-SmartTravelCompanion.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -131,13 +139,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SmartTravelCompanion" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				DA6EEBB78E080249639FAC2E /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				24E59B267046F573273023E3 /* [CP] Embed Pods Frameworks */,
+				4E334D262C83BAA85E14187B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +200,9 @@
 				69A76D4964B54C71AF3316D0 /* Inter-Medium.ttf in Resources */,
 				F25F970CF70848358C865FBF /* Inter-Regular.ttf in Resources */,
 				C0678E4925514AB0971D695A /* Inter-SemiBold.ttf in Resources */,
+				2B71379386DA46139287FBF4 /* BootSplash.storyboard in Resources */,
+				D67FA173A40E414D8AE83A26 /* Colors.xcassets in Resources */,
+				3865AAB8C85F45D4A97009AF /* Inter-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +225,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+		24E59B267046F573273023E3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -231,7 +242,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		4E334D262C83BAA85E14187B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA6EEBB78E080249639FAC2E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,23 +281,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartTravelCompanion/Pods-SmartTravelCompanion-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,13 +297,15 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-SmartTravelCompanion.debug.xcconfig */;
+			baseConfigurationReference = 64964E9CCDE0CE25A36E38C3 /* Pods-SmartTravelCompanion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DZPBBEJ86;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SmartTravelCompanion/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Travel Companion";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,7 +317,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.curbit.hauler;
 				PRODUCT_NAME = SmartTravelCompanion;
 				SWIFT_OBJC_BRIDGING_HEADER = SmartTravelCompanion_Bridging_Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -315,12 +328,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-SmartTravelCompanion.release.xcconfig */;
+			baseConfigurationReference = 83D759EDF50BA52C8F6D33F2 /* Pods-SmartTravelCompanion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A57UTTHRKX;
 				INFOPLIST_FILE = SmartTravelCompanion/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Travel Companion";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,7 +347,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.curbit.hauler;
 				PRODUCT_NAME = SmartTravelCompanion;
 				SWIFT_OBJC_BRIDGING_HEADER = SmartTravelCompanion_Bridging_Header.h;
 				SWIFT_VERSION = 5.0;

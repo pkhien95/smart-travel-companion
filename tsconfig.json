@@ -27,6 +27,10 @@
       "@rootTypes/*": ["./app/rootTypes/*"],
       "@theme": ["./app/theme"],
       "@theme/*": ["./app/theme/*"],
+      "@state": ["./app/state"],
+      "@state/*": ["./app/state/*"],
+      "@mocks": ["./app/mocks"],
+      "@mocks/*": ["./app/mocks/*"],
     }
   }
 }

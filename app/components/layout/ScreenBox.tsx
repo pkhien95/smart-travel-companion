@@ -1,18 +1,17 @@
-import { ViewProps } from '../base/View.tsx'
-import { SafeAreaViewProps, SafeAreaView } from 'react-native-safe-area-context'
+import { SafeAreaView, SafeAreaViewProps } from 'react-native-safe-area-context'
 import { useTheme } from '@shopify/restyle'
 import { Theme } from '@theme/light.ts'
 import { StyleSheet } from 'react-native'
 
 export type ScreenBoxProps = SafeAreaViewProps & {}
 
-function ScreenBox(props: ScreenBoxProps) {
+function ScreenBox({ style, ...rest }: ScreenBoxProps) {
   const { colors } = useTheme<Theme>()
   return (
     <SafeAreaView
       edges={['top', 'bottom']}
-      style={[styles.container, { backgroundColor: colors.background }]}
-      {...props}
+      style={[styles.container, { backgroundColor: colors.background }, style]}
+      {...rest}
     />
   )
 }

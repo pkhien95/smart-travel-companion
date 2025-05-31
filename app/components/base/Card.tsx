@@ -1,11 +1,6 @@
 import React from 'react'
-import { StyleSheet, Platform, ViewStyle } from 'react-native'
-import { createBox } from '@shopify/restyle'
-import { Theme } from '@theme/light.ts'
+import { Platform, ViewStyle } from 'react-native'
 import View, { ViewProps } from './View'
-
-// Create the base component using createBox
-const BaseCard = createBox<Theme>()
 
 // Define the Card props
 export type CardProps = ViewProps & {
@@ -15,21 +10,21 @@ export type CardProps = ViewProps & {
 
 // Create the Card component with shadow styling
 const Card = ({
-  elevation = 3,
+  elevation = 2,
   shadowOpacity = 0.15,
   style,
   backgroundColor = 'cardBackground',
   borderRadius = 'm',
-  padding = 'm',
+  children,
   ...rest
 }: CardProps) => {
   // Generate shadow style based on platform and props
   const shadowStyle: ViewStyle = Platform.select({
     ios: {
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: elevation },
+      shadowColor: 'black',
+      shadowOffset: { width: 2, height: 2 },
       shadowOpacity,
-      shadowRadius: elevation,
+      shadowRadius: 5,
     },
     android: {
       elevation,
@@ -38,13 +33,14 @@ const Card = ({
   })
 
   return (
-    <BaseCard
-      backgroundColor={backgroundColor}
-      borderRadius={borderRadius}
-      padding={padding}
-      style={[shadowStyle, style]}
-      {...rest}
-    />
+    <View style={[shadowStyle, style]} {...rest}>
+      <View
+        overflow={'hidden'}
+        backgroundColor={backgroundColor}
+        borderRadius={borderRadius}>
+        {children}
+      </View>
+    </View>
   )
 }
 
