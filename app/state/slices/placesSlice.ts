@@ -47,6 +47,64 @@ export const placesSlice = createSlice({
         changes: { isFavorite: false },
       })
     },
+    addNote: (
+      state,
+      action: PayloadAction<{ note: string; placeId: string }>,
+    ) => {
+      const { placeId, note } = action.payload
+
+      placesAdapter.updateOne(state, {
+        id: placeId,
+        changes: {
+          notes: [...state.entities[placeId].notes, note],
+        },
+      })
+    },
+    editNote: (
+      state,
+      action: PayloadAction<{ index: number; placeId: string; note: string }>,
+    ) => {
+      const { placeId, index, note } = action.payload
+
+      const notes = [...state.entities[placeId].notes]
+      notes.splice(index, 1, note)
+
+      placesAdapter.updateOne(state, {
+        id: placeId,
+        changes: {
+          notes: notes,
+        },
+      })
+    },
+    deleteNote: (
+      state,
+      action: PayloadAction<{ index: number; placeId: string }>,
+    ) => {
+      const { placeId, index } = action.payload
+
+      const notes = [...state.entities[placeId].notes]
+      notes.splice(index, 1)
+
+      placesAdapter.updateOne(state, {
+        id: placeId,
+        changes: {
+          notes,
+        },
+      })
+    },
+    addPhoto: (
+      state,
+      action: PayloadAction<{ placeId: string; photoUri: string }>,
+    ) => {
+      const { placeId, photoUri } = action.payload
+
+      placesAdapter.updateOne(state, {
+        id: placeId,
+        changes: {
+          photos: [...state.entities[placeId].photos, photoUri],
+        },
+      })
+    },
   },
 })
 
@@ -55,6 +113,10 @@ export const {
   updatePlace,
   addPlaceToFavorite,
   removePlaceFromFavorite,
+  addNote,
+  editNote,
+  deleteNote,
+  addPhoto,
 } = placesSlice.actions
 
 // Export the selectors

@@ -10,6 +10,7 @@ import {
 import { Place } from '@rootTypes/places.ts'
 import { useCallback, useEffect, useRef } from 'react'
 import SuggestedPlaceItem, { ITEM_WIDTH } from './SuggestedPlaceItem.tsx'
+import localizedStrings from '@localization'
 
 export type SuggestedPlacesProps = Omit<ViewProps, 'children'> & {}
 
@@ -75,7 +76,7 @@ const SuggestedPlaces: React.FC<SuggestedPlacesProps> = props => {
   return (
     <View {...props}>
       <Text variant={'subheader'} mb={'12'} mx={'20'}>
-        Suggested Places
+        {localizedStrings.dashboard.suggestedPlaces.title}
       </Text>
       <FlatList<Place>
         ref={flatListRef}

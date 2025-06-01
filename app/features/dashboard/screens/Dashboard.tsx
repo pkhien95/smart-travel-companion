@@ -9,6 +9,8 @@ import { ScrollView, StyleSheet } from 'react-native'
 import WeatherInfo from '../components/WeatherInfo.tsx'
 import SuggestedPlaces from '../components/SuggestedPlaces/SuggestedPlaces.tsx'
 import SavedPlaces from '../components/SavedPlaces/SavedPlaces.tsx'
+import localizedStrings from '@localization'
+import useSelectedLanguage from '@hooks/useSelectedLanguage.ts'
 
 function Dashboard(
   props: CompositeScreenProps<
@@ -16,10 +18,13 @@ function Dashboard(
     NativeStackScreenProps<MainStackParams>
   >,
 ) {
+  useSelectedLanguage()
+  const strings = localizedStrings.dashboard
+
   return (
-    <ScreenBox edges={['top', 'bottom']} style={styles.container}>
+    <ScreenBox edges={['top']} style={styles.container}>
       <Text variant={'header'} mx={'20'} mt={'m'} mb={'s'}>
-        Dashboard
+        {strings.screenTitle}
       </Text>
 
       <ScrollView

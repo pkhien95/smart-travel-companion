@@ -1,0 +1,59 @@
+{
+  "common": {
+    "done": "Done",
+    "save": "Save"
+  },
+  "tabLabels": {
+    "dashboard": "Dashboard",
+    "tripPlanner": "Trip Planner",
+    "settings": "Settings"
+  },
+  "login": {
+    "unlockButton": "Unlock"
+  },
+  "dashboard": {
+    "screenTitle": "Dashboard",
+    "suggestedPlaces": {
+      "title": "Suggested Places"
+    },
+    "savedPlaces": {
+      "title": "Saved Places",
+      "emptyNote": "Your favorite places will be displayed here."
+    }
+  },
+  "placeDetails": {
+    "notes": {
+      "title": "Notes",
+      "description": "Tap an item to edit",
+      "emptyNote": "Add your important notes here",
+      "removeAlert": {
+        "title": "Remove note",
+        "description": "Are you sure to remove this note?",
+        "confirmButton": "Remove",
+        "cancelButton": "Cancel"
+      }
+    }
+  },
+  "addNote": {
+    "screenTitle": "Add Note",
+    "inputPlaceholder": "Enter your note"
+  },
+  "editNote": {
+    "screenTitle": "Edit Note",
+    "inputPlaceholder": "Enter your note"
+  },
+  "settings": {
+    "screenTitle": "Settings",
+    "languageOption": "Language",
+    "themeOption": "Theme"
+  },
+  "selectLanguage": {
+    "screenTitle": "Select language"
+  },
+  "selectTheme": {
+    "screenTitle": "Select theme"
+  },
+  "tripPlanner": {
+    "screenTitle": "Trip Planner"
+  }
+}

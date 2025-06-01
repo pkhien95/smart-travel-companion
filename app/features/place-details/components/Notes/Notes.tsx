@@ -8,23 +8,29 @@ import { useCallback, useMemo } from 'react'
 import NoteItem from './NoteItem.tsx'
 import { NavigationProp, useNavigation } from '@react-navigation/native'
 import { MainStackParams } from '@navigation/main-stack/types.ts'
+import localizedStrings from '@localization'
 
 export type NotesProps = Omit<ViewProps, 'children'> & {
   notes: string[]
+  placeId: string
 }
 
 const MAX_NOTES = 10
 
 const SEPARATOR_HEIGHT = 12
 
-const NotesComponent: React.FC<NotesProps> = ({ notes, ...rest }) => {
+const Notes: React.FC<NotesProps> = ({ notes, placeId, ...rest }) => {
   const { colors } = useTheme()
   const navigation =
     useNavigation<NavigationProp<MainStackParams, 'PlaceDetails'>>()
+  const strings = localizedStrings.placeDetails.notes
 
-  const renderItem = useCallback(({ item }: ListRenderItemInfo<string>) => {
-    return <NoteItem note={item} />
-  }, [])
+  const renderItem = useCallback(
+    ({ item, index }: ListRenderItemInfo<string>) => {
+      return <NoteItem note={item} placeId={placeId} index={index} />
+    },
+    [placeId],
+  )
 
   const renderItemSeparator = useCallback(
     () => <View height={SEPARATOR_HEIGHT} />,
@@ -37,12 +43,16 @@ const NotesComponent: React.FC<NotesProps> = ({ notes, ...rest }) => {
     <View {...rest}>
       <View flexDirection={'row'} alignItems={'center'} mb={'12'}>
         <Text variant={'subheader'} flex={1}>
-          Notes
+          {strings.title}
         </Text>
         <StyledTouchableOpacity
           hitSlop={DEFAULT_HIT_SLOP}
           disabled={!canAddMore}
-          onPress={() => navigation.navigate('AddNote')}>
+          onPress={() =>
+            navigation.navigate('AddNote', {
+              placeId,
+            })
+          }>
           <Icon
             name={'add'}
             size={22}
@@ -50,6 +60,9 @@ const NotesComponent: React.FC<NotesProps> = ({ notes, ...rest }) => {
           />
         </StyledTouchableOpacity>
       </View>
+      <Text variant={'note'} mb={'s'} color={'textSubdued'}>
+        {notes.length === 0 ? strings.emptyNote : strings.description}
+      </Text>
       <FlatList<string>
         data={notes}
         renderItem={renderItem}
@@ -59,4 +72,4 @@ const NotesComponent: React.FC<NotesProps> = ({ notes, ...rest }) => {
   )
 }
 
-export default NotesComponent
+export default Notes

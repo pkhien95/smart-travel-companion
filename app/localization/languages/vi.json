@@ -1,0 +1,59 @@
+{
+  "common": {
+    "done": "Hoàn thành",
+    "save": "Lưu"
+  },
+  "tabLabels": {
+    "dashboard": "Trang chính",
+    "tripPlanner": "Lập kế hoạch",
+    "settings": "Cài đặt"
+  },
+  "login": {
+    "unlockButton": "Mở khóa"
+  },
+  "dashboard": {
+    "screenTitle": "Trang chính",
+    "suggestedPlaces": {
+      "title": "Địa điểm gợi ý"
+    },
+    "savedPlaces": {
+      "title": "Địa điểm đã lưu",
+      "emptyNote": "Các địa điểm yêu thích của bạn sẽ được hiển thị ở đây."
+    }
+  },
+  "placeDetails": {
+    "notes": {
+      "title": "Ghi chú",
+      "description": "Nhấn vào một mục để chỉnh sửa",
+      "emptyNote": "Thêm ghi chú quan trọng của bạn tại đây",
+      "removeAlert": {
+        "title": "Xóa ghi chú",
+        "description": "Bạn có chắc chắn muốn xóa ghi chú này không?",
+        "confirmButton": "Xóa",
+        "cancelButton": "Hủy"
+      }
+    }
+  },
+  "addNote": {
+    "screenTitle": "Thêm ghi chú",
+    "inputPlaceholder": "Nhập ghi chú của bạn"
+  },
+  "editNote": {
+    "screenTitle": "Chỉnh sửa ghi chú",
+    "inputPlaceholder": "Nhập ghi chú của bạn"
+  },
+  "settings": {
+    "screenTitle": "Cài đặt",
+    "languageOption": "Ngôn ngữ",
+    "themeOption": "Giao diện"
+  },
+  "selectLanguage": {
+    "screenTitle": "Chọn ngôn ngữ"
+  },
+  "selectTheme": {
+    "screenTitle": "Chọn giao diện"
+  },
+  "tripPlanner": {
+    "screenTitle": "Lập kế hoạch"
+  }
+}

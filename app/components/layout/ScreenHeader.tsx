@@ -1,4 +1,4 @@
-import { View, ViewProps } from '@components'
+import { Text, View, ViewProps } from '@components'
 import { DEFAULT_HIT_SLOP, WINDOW_WIDTH } from '@constants/metrics.ts'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import StyledTouchableOpacity from '../base/StyledTouchableOpacity.tsx'
@@ -38,8 +38,25 @@ const ScreenHeader = (props: ScreenHeaderProps) => {
             <Icon name={'chevron-back'} size={24} color={tintColor} />
           </StyledTouchableOpacity>
         )}
-        {titleComponent}
-        {rightComponent}
+        <View flex={1} justifyContent={'center'}>
+          {typeof titleComponent === 'string' ? (
+            <Text variant={'subheader'} textAlign={'center'}>
+              {titleComponent}
+            </Text>
+          ) : (
+            titleComponent
+          )}
+        </View>
+        {rightComponent ?? (
+          <StyledTouchableOpacity
+            opacity={0}
+            disabled={false}
+            px={'l'}
+            hitSlop={DEFAULT_HIT_SLOP}
+            onPress={navigation.goBack}>
+            <Icon name={'chevron-back'} size={24} color={tintColor} />
+          </StyledTouchableOpacity>
+        )}
       </View>
     </View>
   )

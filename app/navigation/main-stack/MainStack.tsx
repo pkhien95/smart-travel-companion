@@ -4,6 +4,8 @@ import HomeBottomTabs from '../home-bottom-tabs/HomeBottomTabs.tsx'
 import PlaceDetails from '@features/place-details/screens/PlaceDetails.tsx'
 import AddNote from '@features/place-details/screens/AddNote.tsx'
 import EditNote from '@features/place-details/screens/EditNote.tsx'
+import SelectLanguage from '@features/settings/screens/SelectLanguage.tsx'
+import SelectTheme from '@features/settings/screens/SelectTheme.tsx'
 
 const Stack = createNativeStackNavigator<MainStackParams>()
 
@@ -28,6 +30,16 @@ function MainStack() {
       <Stack.Screen
         name={'EditNote'}
         component={EditNote}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name={'SelectLanguage'}
+        component={SelectLanguage}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name={'SelectTheme'}
+        component={SelectTheme}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

@@ -1,12 +1,16 @@
 import {
-  request,
-  Permission,
   check,
-  RESULTS,
+  checkMultiple,
+  Permission,
   PERMISSIONS,
+  PermissionStatus,
+  request,
+  requestMultiple,
+  RESULTS,
 } from 'react-native-permissions'
 import { Platform } from 'react-native'
 import GeoLocation from 'react-native-geolocation-service'
+import { isArray } from 'lodash'
 
 export const requestPermission = async (permission: Permission) => {
   const checkResult = await check(permission)
@@ -45,4 +49,33 @@ export const requestLocationPermission = async () => {
   }
 
   return requestPermission(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION)
+}
+
+export async function safeRequestPermissions(
+  permissions: Permission[] | Permission,
+): Promise<Nullable<Record<Permission, PermissionStatus>>> {
+  try {
+    if (!permissions) {
+      return null
+    }
+    const permissionStatuses = await checkMultiple(
+      isArray(permissions) ? permissions : [permissions],
+    )
+    const result = permissionStatuses
+    const requestablePermissions = Object.keys(permissionStatuses).filter(
+      permission => {
+        return permissionStatuses[permission as Permission] === RESULTS.DENIED
+      },
+    ) as Permission[]
+
+    const requestResult = await requestMultiple(requestablePermissions)
+
+    for (const [permission, status] of Object.entries(requestResult)) {
+      result[permission as Permission] = status
+    }
+
+    return result
+  } catch (e) {
+    return null
+  }
 }

@@ -5,6 +5,7 @@ import { FlatList, ListRenderItemInfo, StyleSheet } from 'react-native'
 import { Place } from '@rootTypes/places.ts'
 import { useCallback } from 'react'
 import SavedPlaceItem, { ITEM_WIDTH } from './SavedPlaceItem.tsx'
+import localizedStrings from '@localization'
 
 export type SuggestedPlacesProps = Omit<ViewProps, 'children'> & {}
 
@@ -12,6 +13,7 @@ const SEPARATOR_WIDTH = 12
 
 const SavedPlaces: React.FC<SuggestedPlacesProps> = props => {
   const places = useAppSelector(selectFavoritePlaces)
+  const strings = localizedStrings.dashboard
 
   const renderItem = useCallback((info: ListRenderItemInfo<Place>) => {
     const { item } = info
@@ -38,7 +40,7 @@ const SavedPlaces: React.FC<SuggestedPlacesProps> = props => {
     return (
       <View justifyContent={'center'} width={'100%'}>
         <Text variant={'body'} color={'textSubdued'}>
-          Your favorite places will be displayed here.
+          {strings.savedPlaces.emptyNote}
         </Text>
       </View>
     )
@@ -47,7 +49,7 @@ const SavedPlaces: React.FC<SuggestedPlacesProps> = props => {
   return (
     <View {...props}>
       <Text variant={'subheader'} mb={'12'} mx={'20'}>
-        Saved Places
+        {strings.savedPlaces.title}
       </Text>
       <FlatList<Place>
         data={places}

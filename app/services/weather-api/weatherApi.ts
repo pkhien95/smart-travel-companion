@@ -11,11 +11,12 @@ export const weatherApi = createApi({
   }),
   endpoints: build => ({
     getCurrentWeather: build.query<CurrentWeatherResponse, Location>({
-      query: ({ lat, lng }) => ({
+      query: ({ latitude, longitude }) => ({
         url: '/weather',
         params: {
-          lat,
-          lon: lng,
+          lat: latitude,
+          lon: longitude,
+          units: 'metric',
           appId: Config.WEATHER_API_KEY,
         },
       }),

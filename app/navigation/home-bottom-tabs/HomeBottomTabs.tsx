@@ -8,6 +8,8 @@ import IIcon from '@react-native-vector-icons/ionicons'
 import { useTheme } from '@shopify/restyle'
 import { Theme } from '@theme/light.ts'
 import { RouteProp } from '@react-navigation/native'
+import localizedStrings from '@localization'
+import useSelectedLanguage from '@hooks/useSelectedLanguage.ts'
 
 const Tab = createBottomTabNavigator<HomeBottomTabsParams>()
 
@@ -53,6 +55,7 @@ const getTabBarIcon = (
 
 function HomeBottomTabs() {
   const { colors } = useTheme<Theme>()
+  useSelectedLanguage()
 
   return (
     <Tab.Navigator
@@ -64,14 +67,25 @@ function HomeBottomTabs() {
           marginTop: 4,
         },
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: colors.background,
+        },
       })}>
-      <Tab.Screen name={'Dashboard'} component={Dashboard} />
+      <Tab.Screen
+        name={'Dashboard'}
+        component={Dashboard}
+        options={{ title: localizedStrings.tabLabels.dashboard }}
+      />
       <Tab.Screen
         name={'TripPlanner'}
         component={TripPlanner}
-        options={{ title: 'Trip Planner' }}
+        options={{ title: localizedStrings.tabLabels.tripPlanner }}
       />
-      <Tab.Screen name={'Settings'} component={Settings} />
+      <Tab.Screen
+        name={'Settings'}
+        component={Settings}
+        options={{ title: localizedStrings.tabLabels.settings }}
+      />
     </Tab.Navigator>
   )
 }

@@ -11,9 +11,11 @@
     "start:clean": "react-native start --reset-cache && watchman watch-del-all",
     "pod": "cd ios && bundle install && bundle exec pod install && cd ..",
     "update:icons": "npx rnvi-update-plist package.json ios/SmartTravelCompanion/Info.plist",
-    "update:fonts": "npx react-native-asset"
+    "update:fonts": "npx react-native-asset",
+    "postinstall": "npx patch-package"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "2.1.2",
     "@react-native-vector-icons/fontawesome6": "^12.0.0",
     "@react-native-vector-icons/ionicons": "12.0.0",
     "@react-native-vector-icons/material-design-icons": "12.0.0",
@@ -25,18 +27,26 @@
     "@shopify/restyle": "^2.4.5",
     "lodash": "4.17.21",
     "react": "19.0.0",
+    "react-localization": "2.0.6",
     "react-native": "0.79.2",
+    "react-native-biometrics": "3.0.1",
     "react-native-bootsplash": "6.3.8",
+    "react-native-calendar-events": "2.2.0",
+    "react-native-calendars": "1.1312.1",
     "react-native-config": "^1.5.5",
+    "react-native-device-info": "14.0.4",
     "react-native-geolocation-service": "5.3.1",
     "react-native-gesture-handler": "^2.25.0",
+    "react-native-image-picker": "8.2.1",
     "react-native-maps": "^1.23.8",
     "react-native-permissions": "5.4.0",
     "react-native-reanimated": "^3.18.0",
     "react-native-reanimated-carousel": "^4.0.2",
     "react-native-safe-area-context": "5.4.1",
     "react-native-screens": "^4.11.1",
-    "react-redux": "^9.2.0"
+    "react-native-share": "12.0.11",
+    "react-redux": "^9.2.0",
+    "redux-persist": "6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

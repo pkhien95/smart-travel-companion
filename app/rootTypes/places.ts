@@ -1,6 +1,6 @@
 export type Location = {
-  lat: number
-  lng: number
+  latitude: number
+  longitude: number
 }
 
 export type Place = {
@@ -11,4 +11,6 @@ export type Place = {
   notes: string[]
   photos: string[]
   isFavorite: boolean
+  openingHours: string[]
+  rating: number
 }

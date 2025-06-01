@@ -15,6 +15,8 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated'
+import { DEFAULT_HIT_SLOP } from '@constants/metrics.ts'
+import { formatTemp } from '@utils/common.ts'
 
 export type WeatherInfoProps = Omit<CardProps, 'children'> & {}
 
@@ -25,8 +27,8 @@ const WeatherInfo: FC<WeatherInfoProps> = props => {
   const { data: weatherData, isLoading } = useGetCurrentWeatherQuery(
     currentLocation
       ? {
-          lat: currentLocation.coords.latitude,
-          lng: currentLocation.coords.longitude,
+          latitude: currentLocation.coords.latitude,
+          longitude: currentLocation.coords.longitude,
         }
       : skipToken,
   )
@@ -80,17 +82,27 @@ const WeatherInfo: FC<WeatherInfoProps> = props => {
       ) : (
         <>
           <View flexDirection={'row'} alignItems={'center'} pr={'s'} py={'s'}>
-            <Image
-              source={{ uri: weatherData?.icon ?? '' }}
-              style={[styles.icon]}
-            />
-            <View flex={1}>
-              <Text variant={'subheader'}>{weatherData?.name}</Text>
-              <Text variant={'note'} mt={'s'}>
+            <View alignItems={'center'} px={'s'}>
+              <Image
+                source={{ uri: weatherData?.icon ?? '' }}
+                style={[styles.icon]}
+              />
+              {!!weatherData?.temp && (
+                <Text variant={'body'}>{formatTemp(weatherData.temp)}</Text>
+              )}
+            </View>
+            <View flex={1} ml={'s'}>
+              <Text variant={'subheader'} numberOfLines={2}>
+                {weatherData?.name}
+              </Text>
+              <Text variant={'note'} mt={'s'} numberOfLines={2}>
                 {capitalize(weatherData?.description)}
               </Text>
             </View>
-            <StyledTouchableOpacity ml={'s'} onPress={toggleMap}>
+            <StyledTouchableOpacity
+              ml={'s'}
+              onPress={toggleMap}
+              hitSlop={DEFAULT_HIT_SLOP}>
               <Icon
                 name={'map'}
                 size={32}
@@ -108,8 +120,8 @@ const WeatherInfo: FC<WeatherInfoProps> = props => {
                   initialRegion={{
                     latitude: currentLocation.coords.latitude,
                     longitude: currentLocation.coords.longitude,
-                    latitudeDelta: 0.01,
-                    longitudeDelta: 0.01,
+                    latitudeDelta: 0.1,
+                    longitudeDelta: 0.1,
                   }}
                   onPress={onPressOpenMap}>
                   <Marker
@@ -117,7 +129,7 @@ const WeatherInfo: FC<WeatherInfoProps> = props => {
                       latitude: currentLocation.coords.latitude,
                       longitude: currentLocation.coords.longitude,
                     }}
-                    title="Your Location"
+                    title={weatherData?.name ?? 'Your location'}
                   />
                 </MapView>
               )}

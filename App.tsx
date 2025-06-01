@@ -1,29 +1,45 @@
 import React, { useEffect } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import RootStack from '@navigation/root-stack/RootStack.tsx'
-import { useColorScheme } from 'react-native'
-import { lightTheme } from '@theme'
 import { ThemeProvider } from '@shopify/restyle'
 import { Provider } from 'react-redux'
-import { store } from '@state/store.ts'
+import { persistor, store } from '@state/store.ts'
 import BootSplash from 'react-native-bootsplash'
+import linking from '@navigation/linking'
+import { PersistGate } from 'redux-persist/integration/react'
+import useSelectedTheme from '@hooks/useSelectedTheme.ts'
+import localizedStrings from '@localization'
+import { useAppSelector } from '@hooks/redux.ts'
 
-function App(): React.JSX.Element {
-  const colorScheme = useColorScheme() // from 'react-native'
-
-  const selectedTheme = lightTheme
+function AppContent(): React.JSX.Element {
+  const selectedTheme = useSelectedTheme()
+  const l = useAppSelector(state => state.settings.language)
 
   useEffect(() => {
-    BootSplash.hide({ fade: true })
+    async function init() {
+      const language = store.getState().settings.language
+      localizedStrings.setLanguage(language)
+      BootSplash.hide({ fade: true })
+    }
+
+    init()
   }, [])
 
   return (
+    <ThemeProvider theme={selectedTheme}>
+      <NavigationContainer linking={linking}>
+        <RootStack />
+      </NavigationContainer>
+    </ThemeProvider>
+  )
+}
+
+function App(): React.JSX.Element {
+  return (
     <Provider store={store}>
-      <ThemeProvider theme={selectedTheme}>
-        <NavigationContainer>
-          <RootStack />
-        </NavigationContainer>
-      </ThemeProvider>
+      <PersistGate persistor={persistor}>
+        <AppContent />
+      </PersistGate>
     </Provider>
   )
 }

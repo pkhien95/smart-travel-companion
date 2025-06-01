@@ -36,6 +36,7 @@ const Card = ({
     <View style={[shadowStyle, style]} {...rest}>
       <View
         overflow={'hidden'}
+        elevation={elevation}
         backgroundColor={backgroundColor}
         borderRadius={borderRadius}>
         {children}

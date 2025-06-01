@@ -1,14 +1,6 @@
 import { useEffect, useState } from 'react'
-import {
-  requestLocationPermission,
-  requestPermission,
-} from '@utils/permissions.ts'
-import { PERMISSIONS } from 'react-native-permissions'
-import { Platform } from 'react-native'
-import GeoLocation, {
-  GeoPosition,
-  requestAuthorization,
-} from 'react-native-geolocation-service'
+import { requestLocationPermission } from '@utils/permissions.ts'
+import GeoLocation, { GeoPosition } from 'react-native-geolocation-service'
 
 function useCurrentLocation() {
   const [location, setLocation] = useState<GeoPosition | null>(null)
@@ -23,7 +15,6 @@ function useCurrentLocation() {
 
       GeoLocation.getCurrentPosition(
         position => {
-          console.log('position', position)
           setLocation(position)
         },
         error => {
