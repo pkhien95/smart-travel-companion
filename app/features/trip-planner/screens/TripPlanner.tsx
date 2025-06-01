@@ -12,11 +12,12 @@ import {
   CalendarProvider,
   ExpandableCalendar,
 } from 'react-native-calendars'
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { WINDOW_WIDTH } from '@constants/metrics.ts'
 import { fetchCalendarEvents, formatDate } from '@utils/calendar.ts'
 import { formatEventsForAgenda, formatEventsForMarkedDates } from '../utils.ts'
 import localizedStrings from '@localization'
+import { useAppSelector } from '@hooks/redux.ts'
 
 const today = new Date()
 
@@ -28,6 +29,8 @@ function TripPlanner(
 ) {
   const { navigation } = props
   useSelectedLanguage()
+  const { theme } = useAppSelector(state => state.settings)
+
   const { colors } = useTheme()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -149,6 +152,18 @@ function TripPlanner(
     })
   }
 
+  const calendarTheme = useMemo(
+    () => ({
+      calendarBackground: colors.background,
+      dayTextColor: colors.foreground,
+      selectedDayBackgroundColor: colors.primary,
+      selectedDayTextColor: '#fff',
+      todayTextColor: colors.primary,
+      textDisabledColor: colors.foreground,
+    }),
+    [colors.background, colors.foreground, colors.primary],
+  )
+
   return (
     <CalendarProvider date={selectedDate} onDateChanged={setSelectedDate}>
       <ScreenBox enableHorizontalInset={false} edges={['top']}>
@@ -159,14 +174,8 @@ function TripPlanner(
           calendarWidth={WINDOW_WIDTH}
           firstDay={1}
           markedDates={markedDates}
-          theme={{
-            calendarBackground: colors.background,
-            dayTextColor: colors.foreground,
-            selectedDayBackgroundColor: colors.primary,
-            selectedDayTextColor: '#fff',
-            todayTextColor: colors.primary,
-            textDisabledColor: colors.foreground,
-          }}
+          extraData={theme}
+          theme={calendarTheme}
         />
 
         {loading ? (

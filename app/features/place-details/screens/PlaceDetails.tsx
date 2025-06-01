@@ -60,7 +60,11 @@ const PlaceDetails = (
   }
 
   const fullDescription = useMemo(() => {
-    let result = `${locationName} • ${distance}`
+    let result = `${locationName}`
+
+    if (distance) {
+      result = `${result} • ${distance}`
+    }
 
     if (weatherData?.temp) {
       result = `${result} • ${formatTemp(weatherData.temp)}`
