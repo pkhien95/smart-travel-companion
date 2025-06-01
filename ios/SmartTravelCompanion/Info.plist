@@ -20,6 +20,15 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>smarttravel</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -31,8 +40,18 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Read events on your calendar</string>
+	<key>NSCalendarsWriteOnlyAccessUsageDescription</key>
+	<string>Add new events to your calendar</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Take photo of your places</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Use your Face ID to authenticate</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location to show your position on the map.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Add photos to your saved places</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome6_Brands.ttf</string>
@@ -60,24 +79,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>smarttravel</string>
-			</array>
-		</dict>
-	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Add photos to your saved places</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Take photo of your places</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Use your Face ID to authenticate</string>
-	<key>NSCalendarsFullAccessUsageDescription</key>
-	<string>Read events on your calendar</string>
-	<key>NSCalendarsWriteOnlyAccessUsageDescription</key>
-	<string>Add new events to your calendar</string>
 </dict>
 </plist>

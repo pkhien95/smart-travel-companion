@@ -79,3 +79,8 @@ yarn lint
 /assets                 # Global assets
 /__tests__              # Tests
 ```
+
+## Additional Docs
+If you are new or migrating from web to React Native, check out the docs at:
+- [Design System](docs/design-system.md)
+- [Install a native dependency](docs/install-a-native-dependency.md)
