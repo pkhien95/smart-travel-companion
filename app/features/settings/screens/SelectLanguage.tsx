@@ -12,7 +12,7 @@ import { setLanguage, SupportedLanguages } from '@state/slices/settingsSlice.ts'
 import localizedStrings from '@localization'
 
 const SelectLanguage = (
-  props: NativeStackScreenProps<MainStackParams, 'SelectLanguage'>,
+  _props: NativeStackScreenProps<MainStackParams, 'SelectLanguage'>,
 ) => {
   const { language } = useAppSelector(state => state.settings)
   const dispatch = useAppDispatch()

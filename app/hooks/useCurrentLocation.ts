@@ -17,9 +17,7 @@ function useCurrentLocation() {
         position => {
           setLocation(position)
         },
-        error => {
-          console.error('getCurrentPosition', error)
-        },
+        _error => {},
         {
           enableHighAccuracy: false,
           timeout: 15000,

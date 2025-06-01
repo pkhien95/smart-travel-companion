@@ -24,7 +24,6 @@ const Login = (_props: NativeStackScreenProps<AuthStackParams, 'Login'>) => {
 
       dispatch(setIsLoggedIn(true))
     } catch (e) {
-      console.error(e)
     } finally {
       setIsProcessing(false)
     }

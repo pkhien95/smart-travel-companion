@@ -28,7 +28,11 @@ const ScreenHeader = (props: ScreenHeaderProps) => {
   const navigation = useNavigation()
 
   return (
-    <View width={WINDOW_WIDTH} style={{ paddingTop: topInset }} {...rest}>
+    <View
+      width={WINDOW_WIDTH}
+      style={{ paddingTop: topInset }}
+      pointerEvents={'box-only'}
+      {...rest}>
       <View height={height} flexDirection={'row'} alignItems={'center'}>
         {leftComponent ?? (
           <StyledTouchableOpacity
@@ -48,12 +52,7 @@ const ScreenHeader = (props: ScreenHeaderProps) => {
           )}
         </View>
         {rightComponent ?? (
-          <StyledTouchableOpacity
-            opacity={0}
-            disabled={false}
-            px={'l'}
-            hitSlop={DEFAULT_HIT_SLOP}
-            onPress={navigation.goBack}>
+          <StyledTouchableOpacity opacity={0} disabled={true} px={'l'}>
             <Icon name={'chevron-back'} size={24} color={tintColor} />
           </StyledTouchableOpacity>
         )}

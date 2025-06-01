@@ -8,9 +8,7 @@ const safeOpenUrl = async (url: string) => {
     }
 
     await Linking.openURL(url)
-  } catch (e) {
-    console.error(e)
-  }
+  } catch (e) {}
 }
 
 export const openInMaps = (

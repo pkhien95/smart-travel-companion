@@ -12,7 +12,7 @@ import Icon from '@react-native-vector-icons/ionicons'
 import { THEMES } from '@constants/themes.ts'
 
 const SelectTheme = (
-  props: NativeStackScreenProps<MainStackParams, 'SelectTheme'>,
+  _props: NativeStackScreenProps<MainStackParams, 'SelectTheme'>,
 ) => {
   const { theme } = useAppSelector(state => state.settings)
   const dispatch = useAppDispatch()

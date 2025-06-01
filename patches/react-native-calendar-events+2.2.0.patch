@@ -1,5 +1,5 @@
 diff --git a/node_modules/react-native-calendar-events/ios/RNCalendarEvents.m b/node_modules/react-native-calendar-events/ios/RNCalendarEvents.m
-index a85c013..3909d1e 100644
+index a85c013..ff20fb6 100644
 --- a/node_modules/react-native-calendar-events/ios/RNCalendarEvents.m
 +++ b/node_modules/react-native-calendar-events/ios/RNCalendarEvents.m
 @@ -95,7 +95,7 @@ - (BOOL)isCalendarAccessGranted
@@ -7,7 +7,7 @@ index a85c013..3909d1e 100644
      EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
  
 -    return status == EKAuthorizationStatusAuthorized;
-+    return status == EKAuthorizationStatusWriteOnly;
++    return status == EKAuthorizationStatusFullAccess;
  }
  
  #pragma mark -
@@ -48,7 +48,7 @@ index a85c013..3909d1e 100644
 -            reject(@"error", @"authorization request error", error);
 -        }
 -    }];
-+   [self.eventStore requestWriteOnlyAccessToEventsWithCompletion:^(BOOL granted, NSError *error) {
++   [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
 +      NSString *status = granted ? @"authorized" : @"denied";
 +      if (!error) {
 +          resolve(status);

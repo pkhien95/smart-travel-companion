@@ -15,4 +15,7 @@ export type MainStackParams = {
   }
   SelectLanguage: undefined
   SelectTheme: undefined
+  AddEvent: {
+    date: string
+  }
 }

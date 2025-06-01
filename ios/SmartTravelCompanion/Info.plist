@@ -75,5 +75,9 @@
 	<string>Take photo of your places</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Use your Face ID to authenticate</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Read events on your calendar</string>
+	<key>NSCalendarsWriteOnlyAccessUsageDescription</key>
+	<string>Add new events to your calendar</string>
 </dict>
 </plist>

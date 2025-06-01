@@ -1,7 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { MainStackParams } from '@navigation/main-stack/types.ts'
 import { Button, ScreenBox, Text, View } from '@components'
-import ScreenHeader from '@components/layout/ScreenHeader.tsx'
 import { ScrollView, StyleSheet } from 'react-native'
 import PhotoGallery from '../components/PhotoGallery.tsx'
 import { useAppDispatch, useAppSelector } from '@hooks/redux.ts'
@@ -144,11 +143,6 @@ const PlaceDetails = (
           />
         </MapView>
       </ScrollView>
-      <ScreenHeader
-        position={'absolute'}
-        top={0}
-        tintColor={colors.cardBackground}
-      />
     </ScreenBox>
   )
 }

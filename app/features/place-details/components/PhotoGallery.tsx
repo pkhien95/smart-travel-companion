@@ -12,7 +12,6 @@ import { useCallback, useState } from 'react'
 import useTheme from '@hooks/useTheme.ts'
 import StyledTouchableOpacity from '@components/base/StyledTouchableOpacity.tsx'
 import Icon from '@react-native-vector-icons/ionicons'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { PERMISSIONS } from 'react-native-permissions'
 import { requestPermission } from '@utils/permissions.ts'
 import {
@@ -23,6 +22,7 @@ import {
 import { getBase64Uri } from '@utils/media.ts'
 import { useAppDispatch } from '@hooks/redux.ts'
 import { addPhoto } from '@state/slices/placesSlice.ts'
+import ScreenHeader from '@components/layout/ScreenHeader.tsx'
 
 export type PhotoGalleryProps = Omit<ViewProps, 'children'> & {
   photos: string[]
@@ -41,7 +41,6 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
 }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const { colors } = useTheme()
-  const { top: topInset } = useSafeAreaInsets()
   const dispatch = useAppDispatch()
 
   const renderItem = useCallback(
@@ -145,20 +144,25 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
         contentContainerStyle={styles.listContainer}
         showsHorizontalScrollIndicator={false}
       />
-      <StyledTouchableOpacity
-        activeOpacity={0.7}
-        width={40}
-        height={40}
-        borderRadius={'circle'}
-        backgroundColor={'cardBackground'}
-        justifyContent={'center'}
-        alignItems={'center'}
+      <ScreenHeader
         position={'absolute'}
-        top={topInset}
-        right={20}
-        onPress={onPressAddPhoto}>
-        <Icon name={'camera'} size={26} color={colors.primary} />
-      </StyledTouchableOpacity>
+        top={0}
+        tintColor={colors.cardBackground}
+        rightComponent={
+          <StyledTouchableOpacity
+            activeOpacity={0.7}
+            width={40}
+            height={40}
+            marginRight={'20'}
+            borderRadius={'circle'}
+            backgroundColor={'cardBackground'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            onPress={onPressAddPhoto}>
+            <Icon name={'camera'} size={26} color={colors.primary} />
+          </StyledTouchableOpacity>
+        }
+      />
     </View>
   )
 }

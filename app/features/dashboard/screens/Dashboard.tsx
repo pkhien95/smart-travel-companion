@@ -13,7 +13,7 @@ import localizedStrings from '@localization'
 import useSelectedLanguage from '@hooks/useSelectedLanguage.ts'
 
 function Dashboard(
-  props: CompositeScreenProps<
+  _props: CompositeScreenProps<
     BottomTabScreenProps<HomeBottomTabsParams, 'Dashboard'>,
     NativeStackScreenProps<MainStackParams>
   >,

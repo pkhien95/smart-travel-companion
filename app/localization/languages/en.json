@@ -54,6 +54,15 @@
     "screenTitle": "Select theme"
   },
   "tripPlanner": {
-    "screenTitle": "Trip Planner"
+    "screenTitle": "Trip Planner",
+    "addEvent": "Add Event"
+  },
+  "addEvent": {
+    "screenTitle": "Add Event",
+    "titlePlaceholder": "Title",
+    "descriptionPlaceholder": "Description",
+    "doneButton": "Done",
+    "startTime": "Start at",
+    "endTime": "End at"
   }
 }

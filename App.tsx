@@ -9,11 +9,9 @@ import linking from '@navigation/linking'
 import { PersistGate } from 'redux-persist/integration/react'
 import useSelectedTheme from '@hooks/useSelectedTheme.ts'
 import localizedStrings from '@localization'
-import { useAppSelector } from '@hooks/redux.ts'
 
 function AppContent(): React.JSX.Element {
   const selectedTheme = useSelectedTheme()
-  const l = useAppSelector(state => state.settings.language)
 
   useEffect(() => {
     async function init() {

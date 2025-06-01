@@ -88,7 +88,9 @@ const WeatherInfo: FC<WeatherInfoProps> = props => {
                 style={[styles.icon]}
               />
               {!!weatherData?.temp && (
-                <Text variant={'body'}>{formatTemp(weatherData.temp)}</Text>
+                <Text variant={'label'} color={'foreground'}>
+                  {formatTemp(weatherData.temp)}
+                </Text>
               )}
             </View>
             <View flex={1} ml={'s'}>

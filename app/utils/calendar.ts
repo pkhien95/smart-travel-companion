@@ -1,21 +1,26 @@
 import { Alert, Platform } from 'react-native'
 import CalendarEvents, {
+  CalendarEventReadable,
   CalendarEventWritable,
 } from 'react-native-calendar-events'
-import DeviceInfo from 'react-native-device-info'
 import { PERMISSIONS } from 'react-native-permissions'
 
 import { safeRequestPermissions } from './permissions'
+import { get } from 'lodash'
 
 export interface CalendarEvent extends CalendarEventWritable {
   title: string
+}
+
+export interface CalendarEventWithDay extends CalendarEventReadable {
+  day: string
 }
 
 export async function addEventToCalendar(
   event: CalendarEvent,
 ): Promise<Nullable<string>> {
   const permissions = Platform.select({
-    ios: [PERMISSIONS.IOS.CALENDARS_WRITE_ONLY],
+    ios: [PERMISSIONS.IOS.CALENDARS],
     android: [
       PERMISSIONS.ANDROID.WRITE_CALENDAR,
       PERMISSIONS.ANDROID.READ_CALENDAR,
@@ -64,20 +69,57 @@ export async function addEventToCalendar(
       alarms: transformedAlarms,
     })
   } catch (e) {
-    console.error(e)
+    Alert.alert('Failed to add event', get(e, 'message', 'Unknown error'))
     return null
   }
 }
 
-export function canUseCalendar(): boolean {
-  try {
-    return (
-      Platform.OS === 'android' ||
-      (Platform.OS === 'ios' &&
-        parseInt(DeviceInfo.getSystemVersion(), 10) >= 17)
-    )
-  } catch (e) {
-    console.error(e)
-    return false
+export async function fetchCalendarEvents(
+  startDate: Date,
+  endDate: Date,
+  limit?: number,
+): Promise<Nullable<CalendarEventWithDay[]>> {
+  const permissions = Platform.select({
+    ios: [PERMISSIONS.IOS.CALENDARS],
+    android: [PERMISSIONS.ANDROID.READ_CALENDAR],
+  })
+
+  if (permissions === undefined) {
+    return null
   }
+
+  const permissionStatus = await safeRequestPermissions(permissions)
+  if (
+    permissionStatus === null ||
+    permissionStatus[permissions[0]] !== 'granted'
+  ) {
+    Alert.alert('', 'You need to grant calendar permissions to view events')
+    return null
+  }
+
+  try {
+    // Format dates for the API
+    const start = startDate.toISOString()
+    const end = endDate.toISOString()
+
+    // Fetch events from all calendars
+    const events = await CalendarEvents.fetchAllEvents(start, end)
+    // Add day property and limit if needed
+    const formattedEvents = events.map(event => ({
+      ...event,
+      day: formatDate(new Date(event.startDate)),
+    }))
+
+    return limit ? formattedEvents.slice(0, limit) : formattedEvents
+  } catch (e) {
+    return null
+  }
+}
+
+// Helper function to format date to YYYY-MM-DD, respecting local timezone
+export function formatDate(date: Date): string {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
 }
