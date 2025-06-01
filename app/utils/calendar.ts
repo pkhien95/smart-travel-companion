@@ -112,6 +112,7 @@ export async function fetchCalendarEvents(
 
     return limit ? formattedEvents.slice(0, limit) : formattedEvents
   } catch (e) {
+    console.log('Im here')
     return null
   }
 }
